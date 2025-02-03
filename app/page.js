@@ -1,7 +1,7 @@
 "use cleint";
 
 import JaaraInfo from "./JaaraInfo";
-import GetMonsterInfo from "/GetMonstInfo";
+import GetMonsterInfo from "./GetMonsterInfo";
 
 export default function Home() {
   return (
