@@ -7,7 +7,7 @@ const JaaraInfo = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://swarfarm.com/api/v2/monsters/784/")
+    fetch("/api/proxy?path=monsters/784")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
