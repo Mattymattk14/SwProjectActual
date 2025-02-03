@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export default function Home() {
+const GetMonsterInfo = () => {
   const [monsters, setMonsters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -10,7 +10,7 @@ export default function Home() {
     const fetchMonsters = async () => {
       try {
         setLoading(true);
-        const response = await fetch("https://swarfarm.com/api/v2/monsters/");
+        const response = await fetch("/api/proxy?path=monsters/784");
         if (!response.ok) throw new Error("Failed to fetch monsters");
         const data = await response.json();
         setMonsters(data.results);
@@ -63,4 +63,6 @@ export default function Home() {
       </CardContent>
     </Card>
   );
-}
+};
+
+export default GetMonsterInfo;
