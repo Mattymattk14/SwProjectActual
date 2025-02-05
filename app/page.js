@@ -53,7 +53,7 @@ export default function Home() {
       <h1>Summoners War Monster Info</h1>
       {/* <JaaraInfo /> */}
       {/* <GetMonsterInfo /> */}
-      {monsters.map((monster) => ( 
+      {monsters?.map((monster) => ( 
       <MonsterCard  key={monster.id} monster={monster}  />
       ))}
     </>
