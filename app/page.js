@@ -47,12 +47,14 @@ export default function Home() {
   //     </Card>
   //   );
 
+  console.log("Monsters array:", monsters);
 
   return (
     <>
       <h1>Summoners War Monster Info</h1>
       {/* <JaaraInfo /> */}
       {/* <GetMonsterInfo /> */}
+      
       {monsters?.map((monster) => ( 
       <MonsterCard  key={monster.id} monster={monster}  />
       ))}
