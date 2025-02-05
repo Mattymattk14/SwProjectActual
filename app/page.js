@@ -12,20 +12,23 @@ export default function Home() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-      const fetchMonsters = async () => {
-        try {
-          setLoading(true);
-          const response = await fetch("/api/proxy?path=monsters/784");
-          if (!response.ok) throw new Error("Failed to fetch monsters");
-          const data = await response.json();
-          setMonsters(data.results);
-        } catch (err) {
-          setError(err.message);
-        } finally {
-          setLoading(false);
-        }
-      };
+    const fetchMonsters = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch("/api/proxy?path=monsters/784");
+        if (!response.ok) throw new Error("Failed to fetch monsters");
   
+        const data = await response.json();
+        console.log("Fetched data:", data); // <-- Log API response
+  
+        setMonsters(data.results || []); // <-- Ensure results exist
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+      
       fetchMonsters();
     }, []);
 
@@ -47,7 +50,6 @@ export default function Home() {
   //     </Card>
   //   );
 
-  console.log("Monsters array:", monsters);
 
   return (
     <>
