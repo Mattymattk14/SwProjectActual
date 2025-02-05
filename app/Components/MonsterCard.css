@@ -1,0 +1,91 @@
+.MonsterCard {
+    /* background-color: purple; */
+    height: 350px;
+    width: 250px;
+    margin: 10px;
+    border-radius: 2%;
+    padding: 8px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.MonsterTitleContainer {
+    display: flex;
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5px;
+    border-radius: 2rem;
+    justify-content: space-between;
+
+}
+
+.MonsterTitle {
+    display: flex;
+    color: black;
+    text-align: left;
+    padding-left: 5px;
+    font-family: 'Garamond', serif;
+}
+
+.MonsterCost {
+    position: absolute;
+    left: 36%;
+    gap: 5px;
+}
+
+/* .MonsterImage {
+    background-image: url('../../public/Jaara_Icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 60%;
+    border-radius: 8px;
+    border: 2px solid #000;
+    box-shadow: inset 0p 0 6px rgba(0, 0, 0, 0.4);
+} */
+
+.MonsterImage {
+    width: 100%;
+    height: 60%;
+    border-radius: 8px;
+    border: 2px solid #000;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Ensures the image doesn't overflow */
+}
+
+.MonsterImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image fills the space properly */
+    border-radius: 8px;
+}
+
+.ShortDescription {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    text-align: left;
+    padding-left: 5px;
+    /* margin: 3px; */
+    width: 100%;
+    border-radius: 2rem;
+    font-family: 'Garamond', serif;
+
+}
+
+.MainDescription {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    font-family: 'Garamond', serif;
+    color: black;
+    box-shadow: inset 0 0 4px rgb(0, 0, 0, 0.4);
+    height: 20%;
+}

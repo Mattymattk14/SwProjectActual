@@ -1,0 +1,39 @@
+import React, { useState, useEffect } from "react";
+import './MonsterCard.css';
+import MonsterCost from './MonsterCost';
+
+function MonsterCard(props) {
+    const elementColors = {
+        light: "white",
+        dark: "purple",
+        fire: "red",
+        water: "blue",
+        wind: "yellow",
+    };
+ 
+    return (
+            <div className='MonsterCard'
+            style={{backgroundColor: elementColors[props.monster.element] || "gray"}}>
+                <div className='MonsterTitleContainer'>
+                <header className='MonsterTitle'>{props.monster.name}
+                </header>
+                <div className='MonsterCost'>
+                    <MonsterCost cost={props.monster.natural_stars}/>
+                </div>
+                <div className='MonsterElement'></div>
+                <div className='MonsterImage'>
+                    <img src={props.monster.image_filename} alt={props.monster.name} />
+                </div>
+                <div className='ShortDescription'>Short Description Here</div>
+                <div className='MainDescription'>
+                    HP: {props.monster.max_lvl_hp} 
+                    ATK: {props.monster.max_lvl_attack}
+                    DEF: {props.monster.max_lvl_defense}
+                    SPD: {props.monster.speed}   
+                </div>
+                </div>
+            </div>
+    );
+}
+
+export default MonsterCard;
