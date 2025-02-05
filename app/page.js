@@ -28,7 +28,7 @@ export default function Home() {
         setLoading(false);
       }
     };
-      
+
       fetchMonsters();
     }, []);
 
@@ -50,6 +50,25 @@ export default function Home() {
   //     </Card>
   //   );
 
+
+  if (loading) return <p>Loading monsters...</p>;
+  if (error) return <p>Error: {error}</p>;
+  
+  console.log("Monsters state:", monsters); // Log the final state
+  
+  if (!monsters || monsters.length === 0) {
+    return <p>No Monsters Found</p>;
+  }
+  
+  return (
+    <div>
+      <h2>Monster List</h2>
+      <pre>{JSON.stringify(monsters, null, 2)}</pre> {/* Display fetched data */}
+      {monsters.map((monster) => (
+        <MonsterCard key={monster.id} monster={monster} />
+      ))}
+    </div>
+  );
 
   return (
     <>
