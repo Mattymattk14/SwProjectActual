@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './MonsterCost.css';
+import './MonsterCard.css';
 import MonsterCost from './MonsterCost';
 
 function MonsterCard(props) {

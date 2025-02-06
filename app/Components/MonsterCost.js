@@ -1,4 +1,5 @@
 import React from 'react';
+import './MonsterCost.css'
 
 function MonsterCost(props) {
     return (
