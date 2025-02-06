@@ -63,7 +63,7 @@ export default function Home() {
   return (
     <div>
       <h2>Monster List</h2>
-      <pre>{JSON.stringify(monsters, null, 2)}</pre> {/* Display fetched data */}
+      {/* <pre>{JSON.stringify(monsters, null, 2)}</pre> Display fetched data */}
       {monsters.map((monster) => (
         <MonsterCard key={monster.id} monster={monster} />
       ))}
