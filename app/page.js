@@ -21,7 +21,7 @@ export default function Home() {
         const data = await response.json();
         console.log("Fetched data:", data); // <-- Log API response
   
-        setMonsters(data); // <-- Ensure results exist
+        setMonsters(data.results); // <-- Ensure results exist
       } catch (err) {
         setError(err.message);
       } finally {
@@ -63,24 +63,26 @@ export default function Home() {
   return (
     <div>
       <h2>Monster List</h2>
-      {/* <pre>{JSON.stringify(monsters, null, 2)}</pre> Display fetched data */}
+      {/* <pre>{JSON.stringify(monsters, null, 2)}</pre> Display fetched data
       {monsters.map((monster) => (
         <MonsterCard key={monster.id} monster={monster} />
-      ))}
+      ))} */}
+       <MonsterCard key={monsters.id} monster={monsters} />
+
     </div>
   );
 
-  return (
-    <>
-      <h1>Summoners War Monster Info</h1>
-      {/* <JaaraInfo /> */}
-      {/* <GetMonsterInfo /> */}
+  // return (
+  //   <>
+  //     <h1>Summoners War Monster Info</h1>
+  //     {/* <JaaraInfo /> */}
+  //     {/* <GetMonsterInfo /> */}
       
-      {monsters?.map((monster) => ( 
-      <MonsterCard  key={monster.id} monster={monster}  />
-      ))}
-    </>
-  );
+  //     {monsters?.map((monster) => ( 
+  //     <MonsterCard  key={monster.id} monster={monster}  />
+  //     ))}
+  //   </>
+  // );
 }
 
 
