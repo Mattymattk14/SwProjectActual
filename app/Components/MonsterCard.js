@@ -13,7 +13,7 @@ function MonsterCard(props) {
  
     return (
             <div className='MonsterCard'
-            style={{backgroundColor: elementColors[props.monster.element] || "gray"}}>
+            style={{backgroundColor: elementColors[props.monster.element.toLowerCase()] || "gray"}}>
                 <div className='MonsterTitleContainer'>
                 <header className='MonsterTitle'>{props.monster.name}
                 </header>
@@ -22,7 +22,7 @@ function MonsterCard(props) {
                 </div>
                 <div className='MonsterElement'></div>
                 <div className='MonsterImage'>
-                    <img src={props.monster.image_filename} alt={props.monster.name} />
+                    <img src={`https://swarfarm.com/static/herders/images/monsters/${props.monster.image_filename}`} alt={props.monster.name} />
                 </div>
                 <div className='ShortDescription'>Short Description Here</div>
                 <div className='MainDescription'>
