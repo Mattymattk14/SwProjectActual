@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './MonsterCard.css';
+import './MonsterCost.css';
 import MonsterCost from './MonsterCost';
 
 function MonsterCard(props) {
@@ -17,11 +17,9 @@ function MonsterCard(props) {
                 <div className='MonsterTitleContainer'>
                 <div className='MonsterTitle'>{props.monster.name}
                 </div>
-                <div className='MonsterCost'>
                     <MonsterCost cost={props.monster.natural_stars}/>
-                </div>
                 <div className='MonsterElement'></div>
-                </div>ß
+                </div>
                 <div className='MonsterImage'>
                     <img src={`https://swarfarm.com/static/herders/images/monsters/${props.monster.image_filename}`} alt={props.monster.name} />
                 </div>
