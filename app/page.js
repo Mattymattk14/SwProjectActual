@@ -20,8 +20,15 @@ export default function Home() {
   
         const data = await response.json();
         console.log("Fetched data:", data); // <-- Log API response
+
+        if (data.results && Array.isArray(data.results)) {
+          setMonsters(data.results)
+        } else {
+          console.error("results array not found in API response")
+          setMonsters([])
+        }
   
-        setMonsters(data.results); // <-- Ensure results exist
+        // setMonsters(data.results); // <-- Ensure results exist
       } catch (err) {
         setError(err.message);
       } finally {
@@ -63,23 +70,15 @@ export default function Home() {
   return (
     <div>
       <h2>Monster List</h2>
-      <pre>{JSON.stringify(monsters, null, 2)}</pre> Display fetched data
-      {monsters?.map((monster) => (
-        <MonsterCard key={monster.id} monster={monster} />
-      ))}
-
-      <div>
-      {monsters.length > 0 ? (
+      {/* <pre>{JSON.stringify(monsters, null, 2)}</pre> Display fetched data */}
+    
+      { monsters.length > 0 ? (
       monsters.map((monster) => (
-        <div key={monster.id}>
-          <h2>{monster.name}</h2>
-          <p>Element: {monster.element}</p>
-        </div>
+        <MonsterCard key={monster.id} monster={monster} />
       ))
-    ) : (
-      <p>No monsters found.</p>
-    )}
-      </div>
+      ) : (
+        <p>No Monsters found.</p>
+      )}
     </div>
   );
 
