@@ -21,14 +21,8 @@ export default function Home() {
         const data = await response.json();
         console.log("Fetched data:", data); // <-- Log API response
 
-        if (data.results && Array.isArray(data.results)) {
-          setMonsters(data.results)
-        } else {
-          console.error("results array not found in API response")
-          setMonsters([])
-        }
   
-        // setMonsters(data.results); // <-- Ensure results exist
+        setMonsters([data.results ? data.results[0] : data]); // <-- Ensure results exist
       } catch (err) {
         setError(err.message);
       } finally {
