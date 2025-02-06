@@ -21,7 +21,7 @@ export default function Home() {
         const data = await response.json();
         console.log("Fetched data:", data); // <-- Log API response
   
-        setMonsters(data.results); // <-- Ensure results exist
+        setMonsters(data); // <-- Ensure results exist
       } catch (err) {
         setError(err.message);
       } finally {
@@ -56,9 +56,9 @@ export default function Home() {
   
   console.log("Monsters state:", monsters); // Log the final state
   
-  if (!monsters || monsters.length === 0) {
-    return <p>No Monsters Found</p>;
-  }
+  // if (!monsters || monsters.length === 0) {
+  //   return <p>No Monsters Found</p>;
+  // }
   
   return (
     <div>
@@ -68,6 +68,18 @@ export default function Home() {
         <MonsterCard key={monster.id} monster={monster} />
       ))}
 
+      <div>
+      {monsters.length > 0 ? (
+      monsters.map((monster) => (
+        <div key={monster.id}>
+          <h2>{monster.name}</h2>
+          <p>Element: {monster.element}</p>
+        </div>
+      ))
+    ) : (
+      <p>No monsters found.</p>
+    )}
+      </div>
     </div>
   );
 
