@@ -21,7 +21,7 @@ export default function Home() {
         const data = await response.json();
         console.log("Fetched data:", data); // <-- Log API response
   
-        setMonsters(data); // <-- Ensure results exist
+        setMonsters(data.results); // <-- Ensure results exist
       } catch (err) {
         setError(err.message);
       } finally {
