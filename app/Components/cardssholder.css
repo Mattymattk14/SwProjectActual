@@ -28,11 +28,6 @@
     font-family: 'Garamond', serif;
 }
 
-.MonsterCost {
-    position: absolute;
-    left: 36%;
-    ` gap: 5px;
-}
 
 /* .MonsterImage {
     background-image: url('../../public/Jaara_Icon.png');
@@ -48,7 +43,7 @@
 
 .MonsterImage {
     width: 100%;
-    height: 60%;
+    height: 180px;
     border-radius: 8px;
     border: 2px solid #000;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
@@ -59,7 +54,7 @@
     /* Ensures the image doesn't overflow */
 }
 
-.MonsterImage img {
+.MonsterImage>img {
     width: 100%;
     height: 100%;
     object-fit: cover;

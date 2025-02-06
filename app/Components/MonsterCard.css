@@ -39,3 +39,8 @@
     overflow: hidden;
     /* Ensures the image doesn't overflow */
 }
+
+.MonsterImage img {
+    height: 180px;
+    width: 100%;
+}
