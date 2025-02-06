@@ -1,54 +1,41 @@
 .MonsterCard {
-    /* background-color: purple; */
+    display: grid;
+    grid-template-rows: auto auto 1fr auto auto;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    background-color: purple;
     height: 350px;
     width: 250px;
     margin: 10px;
     border-radius: 2%;
     padding: 8px;
     box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.5);
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
 }
 
 .MonsterTitleContainer {
     display: flex;
-    background: rgba(255, 255, 255, 0.8);
-    margin-bottom: 5px;
-    border-radius: 2rem;
     justify-content: space-between;
-
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 2rem;
+    grid-row: 1;
 }
 
 .MonsterTitle {
-    display: flex;
     color: black;
-    text-align: left;
-    padding-left: 5px;
     font-family: 'Garamond', serif;
+    font-size: 1.2em;
 }
 
 .MonsterCost {
-    position: absolute;
-    left: 36%;
+    display: flex;
     gap: 5px;
 }
 
-/* .MonsterImage {
-    background-image: url('../../public/Jaara_Icon.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 60%;
-    border-radius: 8px;
-    border: 2px solid #000;
-    box-shadow: inset 0p 0 6px rgba(0, 0, 0, 0.4);
-} */
-
 .MonsterImage {
     width: 100%;
-    height: 60%;
+    height: 150px;
     border-radius: 8px;
     border: 2px solid #000;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
@@ -56,14 +43,13 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    /* Ensures the image doesn't overflow */
+    grid-row: 2;
 }
 
 .MonsterImage img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Ensures the image fills the space properly */
     border-radius: 8px;
 }
 
@@ -71,21 +57,28 @@
     background: rgba(255, 255, 255, 0.8);
     color: black;
     text-align: left;
-    padding-left: 5px;
-    /* margin: 3px; */
-    width: 100%;
+    padding: 5px;
     border-radius: 2rem;
     font-family: 'Garamond', serif;
-
+    grid-row: 3;
 }
 
 .MainDescription {
-    margin-top: 10px;
     padding: 10px;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
     font-family: 'Garamond', serif;
     color: black;
-    box-shadow: inset 0 0 4px rgb(0, 0, 0, 0.4);
-    height: 20%;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.4);
+    grid-row: 4;
+}
+
+.MonsterElement {
+    grid-row: 5;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 2rem;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Garamond', serif;
+    color: black;
 }
