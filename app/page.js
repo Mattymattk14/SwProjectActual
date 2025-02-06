@@ -56,9 +56,9 @@ export default function Home() {
   
   console.log("Monsters state:", monsters); // Log the final state
   
-  if (!monsters || monsters.length === 0) {
-    return <p>No Monsters Found</p>;
-  }
+  // if (!monsters || monsters.length === 0) {
+  //   return <p>No Monsters Found</p>;
+  // }
   
   return (
     <div>
@@ -68,6 +68,7 @@ export default function Home() {
         <MonsterCard key={monster.id} monster={monster} />
       ))} */}
        <MonsterCard key={monsters.id} monster={monsters} />
+       <H2>{monsters.name}</H2>
 
     </div>
   );
