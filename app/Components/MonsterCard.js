@@ -15,12 +15,13 @@ function MonsterCard(props) {
             <div className='MonsterCard'
             style={{backgroundColor: elementColors[props.monster.element.toLowerCase()] || "gray"}}>
                 <div className='MonsterTitleContainer'>
-                <header className='MonsterTitle'>{props.monster.name}
-                </header>
+                <div className='MonsterTitle'>{props.monster.name}
+                </div>
                 <div className='MonsterCost'>
                     <MonsterCost cost={props.monster.natural_stars}/>
                 </div>
                 <div className='MonsterElement'></div>
+                </div>ß
                 <div className='MonsterImage'>
                     <img src={`https://swarfarm.com/static/herders/images/monsters/${props.monster.image_filename}`} alt={props.monster.name} />
                 </div>
@@ -31,9 +32,8 @@ function MonsterCard(props) {
                     DEF: {props.monster.max_lvl_defense}
                     SPD: {props.monster.speed}   
                 </div>
-                </div>
             </div>
     );
 }
 
-export default MonsterCard;
+export default MonsterCard
