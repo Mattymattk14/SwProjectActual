@@ -56,29 +56,24 @@ export default function Home() {
   
   console.log("Monsters state:", monsters); // Log the final state
   
-  // if (!monsters || monsters.length === 0) {
-  //   return <p>No Monsters Found</p>;
-  // }
+  if (!monsters || monsters.length === 0) {
+    return <p>No Monsters Found</p>;
+  }
   
   return (
     <div>
       <h2>Monster List</h2>
-      {/* <pre>{JSON.stringify(monsters, null, 2)}</pre> Display fetched data
-      {monsters.map((monster) => (
+      <pre>{JSON.stringify(monsters, null, 2)}</pre> Display fetched data
+      {monsters?.map((monster) => (
         <MonsterCard key={monster.id} monster={monster} />
-      ))} */}
-       <MonsterCard key={monsters.id} monster={monsters} />
-       <H2>{monsters.name}</H2>
+      ))}
 
     </div>
   );
 
   // return (
   //   <>
-  //     <h1>Summoners War Monster Info</h1>
-  //     {/* <JaaraInfo /> */}
-  //     {/* <GetMonsterInfo /> */}
-      
+  //     <h1>Summoners War Monster Info</h1>      
   //     {monsters?.map((monster) => ( 
   //     <MonsterCard  key={monster.id} monster={monster}  />
   //     ))}
