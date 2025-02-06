@@ -1,14 +1,15 @@
 .MonsterCard {
     /* background-color: purple; */
-    height: 350px;
+    height: auto;
     width: 250px;
     margin: 10px;
-    border-radius: 2%;
-    padding: 8px;
+    border-radius: 12px;
+    padding: 10px;
     box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.5);
-    /* display: flex;
+    display: flex;
     flex-direction: column;
-    align-items: center; */
+    align-items: stretch;
+    gap: 10px;
 }
 
 .MonsterTitleContainer {
@@ -17,20 +18,23 @@
     margin-bottom: 5px;
     border-radius: 2rem;
     justify-content: space-between;
-
+    align-items: center;
+    padding: 10px;
 }
 
 .MonsterTitle {
-    display: flex;
+    /* display: flex; */
     color: black;
-    text-align: left;
-    padding-left: 5px;
+    /* text-align: left; */
+    /* padding-left: 5px; */
     font-family: 'Garamond', serif;
 }
 
 .MonsterCost {
-    position: absolute;
-    left: 36%;
+    display: flex;
+    align-items: center;
+    /* position: absolute;
+    left: 36%; */
     gap: 5px;
 }
 
@@ -48,7 +52,7 @@
 
 .MonsterImage {
     width: 100%;
-    height: 60%;
+    height: 200px;
     border-radius: 8px;
     border: 2px solid #000;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
@@ -70,13 +74,13 @@
 .ShortDescription {
     background: rgba(255, 255, 255, 0.8);
     color: black;
-    text-align: left;
-    padding-left: 5px;
-    /* margin: 3px; */
-    width: 100%;
+    /* text-align: left; */
+    padding: 5px;
+    margin: 5px 0;
+    /* width: 100%; */
     border-radius: 2rem;
     font-family: 'Garamond', serif;
-
+    font-size: 0.9rem;
 }
 
 .MainDescription {
@@ -87,9 +91,6 @@
     font-family: 'Garamond', serif;
     color: black;
     box-shadow: inset 0 0 4px rgb(0, 0, 0, 0.4);
-    height: 20%;
-}
-
-.MonsterCard {
-    border: 5px solid limegreen;
+    height: auto;
+    line-height: 1.5
 }
