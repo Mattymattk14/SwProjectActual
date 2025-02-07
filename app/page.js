@@ -80,7 +80,7 @@ const fetchMonster = async () => {
   //   );
 
 
-  if (loading) return <p>Loading monsters...</p>;
+  // if (loading) return <p>Loading monsters...</p>;
   if (error) return <p>Error: {error}</p>;
   
   console.log("Monsters state:", monsters); // Log the final state
