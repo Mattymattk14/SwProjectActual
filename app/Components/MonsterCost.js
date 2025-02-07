@@ -2,6 +2,13 @@ import React from 'react';
 import './MonsterCost.css'
 
 function MonsterCost(props) {
+    const elementColors = {
+        light: "white",
+        dark: "purple",
+        fire: "red",
+        water: "blue",
+        wind: "yellow",
+    };
 
 
     return (
