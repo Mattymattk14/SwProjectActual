@@ -12,11 +12,22 @@ export default function Home() {
   const [monsters, setMonsters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [validationMessage, setValidationMessage] = useState('');
 
+const handleInputChange = (e) => {
+  const value = e.target.value;
+
+  if (value == '' || /^[0-9]=$/.test(value)) {
+    setMonsterId(value);
+    setValidationMessage('');
+  } else {
+    setValidationMessage('Please enter a valid number between 1 and 2682')
+  }
+};
 
 const fetchMonster = async () => {
   if (!monsterId) {
-    setError("Please enter a Monster ID.");
+    setValidationMessage('Monster ID must be a number.')
     return;
   }
 
@@ -112,6 +123,7 @@ const fetchMonster = async () => {
       <button
       onClick={fetchMonster}
       className="bg-blue-500 text-white p-2 hover:bg-blue-700" >Submit</button>
+      {validationMessage && <p className="text-red-500 mt-4">{validationMessage}</p>}
       </div>
     </div>
   );
