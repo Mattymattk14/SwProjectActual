@@ -29,6 +29,8 @@
 
 .MonsterCostContainer {
     height: 20px;
+    position: absolute;
+    left: 200px;
 }
 
 .MonsterImage {
