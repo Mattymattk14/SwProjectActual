@@ -31,6 +31,14 @@ const fetchMonster = async () => {
     return;
   }
 
+  if (!/^\d+$/.test(monsterId)) {
+    setValidationMessage('Monster ID must be a number.');
+    return;  // Stop fetch
+  }
+
+  setValidationMessage('');
+
+
   try {
     // setLoading(true);
     setError(null);
