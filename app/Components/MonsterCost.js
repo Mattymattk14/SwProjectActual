@@ -19,8 +19,8 @@ function MonsterCost(props) {
              width={20}
              height={25}
              viewBox='0 0 20 30'>
-                <ellipse cx={11} cy={12} rx={10} ry={11} fill={elementColors[props.colors.toLowerCase()] || "gray"} stroke='black' strokeWidth={2} />
-                <text x={11} y={16} fontSize={15} fill='black' textAnchor='middle' fontWeight="bold" 
+                <ellipse cx={11} cy={12} rx={10} ry={11} fill={elementColors[props.colors.toLowerCase()] || "black"} stroke='black' strokeWidth={2} />
+                <text x={11} y={16} fontSize={15} fill='white' textAnchor='middle' fontWeight="bold" 
                       
                 // fontFamily=" 'Beleren BOld', 'Garamond', 'Georgia', serif "
                 >{props.cost}</text>
