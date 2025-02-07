@@ -17,7 +17,7 @@ function MonsterCard(props) {
                 <div className='MonsterTitleContainer'>
                 <div className='MonsterTitle'>{props.monster.name}
                 </div>
-                   <div><MonsterCost cost={props.monster.natural_stars}/></div> 
+                   <div className="MonsterCostContainer"><MonsterCost cost={props.monster.natural_stars}/></div> 
                 <div className='MonsterElement'></div>
                 </div>
                 <div className='MonsterImage'>
