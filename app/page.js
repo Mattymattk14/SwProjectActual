@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import JaaraInfo from "./JaaraInfo";
 // import GetMonsterInfo from "./GetMonsterInfo";
 import MonsterCard from "./Components/MonsterCard";
+import './page.css'
 
 
 export default function Home() {
@@ -101,6 +102,9 @@ const fetchMonster = async () => {
       ) : (
         <p>No Monsters found.</p>
       )}
+      <div className="MonsterSelector">
+      <h3>Enter a number between 1 and 2682</h3>
+  
       <input type="text" placeholder="Enter Monster ID"
       value={monsterId} 
       onChange={(e) => setMonsterId(e.target.value)}
@@ -108,7 +112,7 @@ const fetchMonster = async () => {
       <button
       onClick={fetchMonster}
       className="bg-blue-500 text-white p-2 hover:bg-blue-700" >Submit</button>
-
+      </div>
     </div>
   );
 
