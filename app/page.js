@@ -7,31 +7,58 @@ import MonsterCard from "./Components/MonsterCard";
 
 
 export default function Home() {
+  const [monsterId, setMonsterId] = useState('');
   const [monsters, setMonsters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchMonsters = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch("/api/proxy?path=monsters/784");
-        if (!response.ok) throw new Error("Failed to fetch monsters");
+
+const fetchMonster = async () => {
+  if (!monsterId) {
+    setError("Please enter a Monster ID.");
+    return;
+  }
+
+  try {
+    setLoading(true);
+    setError(null);
+
+    const response = await fetch(`/api/proxy?path=monsters/${monsterId}`);
+    if (!response.ok) throw new Error("Failed to fetch monsters");
+
+    const data = await response.json();
+      console.log("Fetched data:", data); // Debugging log
+      
+      setMonsters([data.results ? data.results[0] : data]); // Adjusted to handle 'results'
+    } catch (err) {
+      setError(err.message);
+      setMonsters([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // useEffect(() => {
+  //   const fetchMonsters = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const response = await fetch(`/api/proxy?path=monsters/${monsterId}`);
+  //       if (!response.ok) throw new Error("Failed to fetch monsters");
   
-        const data = await response.json();
-        console.log("Fetched data:", data); // <-- Log API response
+  //       const data = await response.json();
+  //       console.log("Fetched data:", data); // <-- Log API response
 
   
-        setMonsters([data.results ? data.results[0] : data]); // <-- Ensure results exist
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  //       setMonsters([data.results ? data.results[0] : data]); // <-- Ensure results exist
+  //     } catch (err) {
+  //       setError(err.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-      fetchMonsters();
-    }, []);
+  //     fetchMonsters();
+  //   }, []);
 
   //   if (loading)
   //   return (
@@ -73,6 +100,14 @@ export default function Home() {
       ) : (
         <p>No Monsters found.</p>
       )}
+      <input type="text" placeholder="Enter Monster ID"
+      value={monsterId} 
+      onChange={(e) => setMonsterId(e.target.value)}
+      className="border p-2 mr-2 rounded"/>
+      <button
+      onClick={fetchMonster}
+      className="bg-blue-500 text-white p-2 hover:bg-blue-700" >Submit</button>
+
     </div>
   );
 
@@ -84,6 +119,6 @@ export default function Home() {
   //     ))}
   //   </>
   // );
-}
+};
 
 
