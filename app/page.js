@@ -20,7 +20,7 @@ const fetchMonster = async () => {
   }
 
   try {
-    setLoading(true);
+    // setLoading(true);
     setError(null);
 
     const response = await fetch(`/api/proxy?path=monsters/${monsterId}`);
@@ -33,9 +33,10 @@ const fetchMonster = async () => {
     } catch (err) {
       setError(err.message);
       setMonsters([]);
-    } finally {
-      setLoading(false);
     }
+    // finally {
+    //   setLoading(false);
+    // }
   };
 
   // useEffect(() => {
