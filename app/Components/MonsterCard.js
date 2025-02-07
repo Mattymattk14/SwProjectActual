@@ -4,7 +4,7 @@ import MonsterCost from './MonsterCost';
 
 function MonsterCard(props) {
     const elementColors = {
-        light: "white",
+        light: "siver",
         dark: "purple",
         fire: "red",
         water: "blue",

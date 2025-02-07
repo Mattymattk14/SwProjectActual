@@ -3,7 +3,7 @@ import './MonsterCost.css'
 
 function MonsterCost(props) {
     const elementColors = {
-        light: "white",
+        light: "silver",
         dark: "purple",
         fire: "red",
         water: "blue",
