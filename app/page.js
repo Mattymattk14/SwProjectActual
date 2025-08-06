@@ -36,12 +36,23 @@ export default function Home() {
     }
 
     setValidationMessage("");
+    setLoading(true);
 
     try {
-      // setLoading(true);
       setError(null);
 
       const response = await fetch(`/api/proxy?path=monsters/${monsterId}`);
+
+      // Handle rate limiting
+      if (response.status === 429) {
+        const errorData = await response.json();
+        setValidationMessage(
+          errorData.message || "Rate limit exceeded. Please try again later."
+        );
+        setLoading(false);
+        return;
+      }
+
       if (!response.ok) throw new Error("Failed to fetch monsters");
 
       const data = await response.json();
@@ -51,10 +62,9 @@ export default function Home() {
     } catch (err) {
       setError(err.message);
       setMonsters([]);
+    } finally {
+      setLoading(false);
     }
-    // finally {
-    //   setLoading(false);
-    // }
   };
 
   // useEffect(() => {
