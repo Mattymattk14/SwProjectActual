@@ -29,7 +29,7 @@
 
 .MonsterCostContainer {
     height: 20px;
-    position: absolute;
+    position: relative;
     left: 200px;
 }
 
