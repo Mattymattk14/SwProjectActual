@@ -17,6 +17,8 @@
     margin-bottom: 5px;
     border-radius: 2rem;
     justify-content: space-between;
+    align-items: center;
+    min-height: 30px;
 }
 
 .MonsterTitle {
@@ -28,7 +30,6 @@
 }
 
 .MonsterCostContainer {
-    height: 20px;
     display: flex;
     align-items: center;
     padding-right: 5px;
